@@ -1,0 +1,252 @@
+body{
+	background: #F7F7F7; /* gris claire */
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+}
+
+main{
+	height: 70vh;
+}
+
+/**--------------- css de la barre de menu ------------------*/
+.main_menu{
+	background: #2EC4B6; /* vert jolie */
+	height: 10%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 4vh;
+}
+
+.logo{
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.logo span{
+	font-family: Mistral;
+	font-size: 1.7rem;
+	color: white;
+}
+
+.hamburger_menu{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.hamburger_lines{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 40%;
+
+}
+.hamburger_menu span{
+	border-top: solid 2px white;
+	
+	width: 25px;
+	height: 0;
+}
+
+/********************************************************/
+
+
+/**--------------- css du footer ------------------*/
+footer{
+	display: flex;
+	overflow: hidden;
+	margin-top: 4vh;
+
+}
+/* image footer */
+.svg{
+	width: 100vw;
+}
+
+
+/********************************************************/
+
+/**--------------- css boutons pg accueil ------------------*/
+
+.main_btns{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 0 20px;
+	
+}
+
+.btns_container{
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+	/* btn connexion et inscription*/
+.btn_nvc{
+	padding: 20px 60px;
+	border-radius: 60px;
+	box-shadow: 4px 8px 10px #00000024;
+	background: white;
+	font-family: Segoe Print;
+	font-size: 1.3rem;
+	cursor: pointer;
+
+}
+
+button{
+	cursor: pointer;
+}
+	/* btn inscription*/
+button[name='nv_compte']{
+	padding: 2px 20px;
+	position: relative;
+	
+
+}
+
+.btn_connexion button {
+	background: #2EC4B6;
+	color: white;
+	border: none;	
+	transition: background 0.5s;
+}
+
+.btn_connexion button:hover{
+	background:#086058 ;
+
+}
+
+
+
+.btn_nvc:nth-child(2){
+	background: #2EC4B6;
+	color: white;
+}
+
+
+.bar_ou{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.bar_ou p{
+	margin-block: 0;
+	padding: 5px;
+}
+
+.bar_ou div {
+	border-bottom: solid 1px red;
+	height: 1px;
+	width: 100px;
+}
+
+.bar_ou div:nth-child(1) {position: relative; left: -1px;}
+
+
+
+/********************************************************/
+
+/**--------------- css form add_client ------------------*/
+
+.nvc_titre {
+	text-align: center;
+	font-family: Mistral;
+	margin-bottom: 4vh;
+	font-size: 1.5rem;
+	/*letter-spacing: 5px;*/
+	color: #ff9f1c;
+}
+
+#input_field{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	
+}
+
+#input_field input, #input_field  div{
+	margin-bottom: 5%;
+
+}
+
+#input_field input{
+	width: 80%;
+	border-radius: 15px;
+	border: none ;/*solid 1px #dfdfdf;*/
+	padding: 10px;
+	font-size: 0.8rem;
+	box-shadow: 2px 5px 10px #0000120f;
+
+
+}
+
+#input_field input::placeholder{
+	color: grey;
+	font-style: italic;
+}
+/* on change la couleur du focus */
+#input_field input:focus{
+	outline: solid 1px grey;
+	
+}
+
+#input_field  div{
+	display: flex;
+	justify-content: space-between;
+	width: 85%;
+	margin-block: 0;
+}
+
+#input_field  div > input:nth-child(2){
+	width: 30%;
+}
+
+#input_field  div > input:nth-child(1){
+	width: 50%;
+}
+
+#input_field #submit{
+	background: #2EC4B6;
+	font-size: 1.5rem;
+	width: 85%;
+	border-radius: 20px;
+	margin-top: 10%;
+	box-shadow: 2px 5px 5px #00001233;
+	border: none;
+	color:  white;
+	cursor: pointer;
+}
+
+/* -------- CSS partie Login -------------------------*/
+/* on reprend pour le formulaire l'id input_field qui est deja codé */
+.connexion_titre {
+	text-align: center;
+	font-family: Mistral;
+	margin-bottom: 4vh;
+	font-size: 1.5rem;
+	/*letter-spacing: 5px;*/
+	color: #ff9f1c;
+
+}
+.connexion_titre h1{
+	margin-block: 0;
+}
+	
+
+.form_connexion{
+	width: 80vw;
+	/* j'ai du rajouter cette classe pour avoir les inputs larges, sinon petits*/
+}
+

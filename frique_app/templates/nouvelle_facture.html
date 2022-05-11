@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	
+	<main>
+		<section>
+			<div class="nvc_titre"> <h1>Eléments de la facture</h1> </div>
+			<form method="POST" action="check" id="input_field">
+				{{ form_facture.crsf_token }}
+				{{ form_facture.hidden_tag() }}
+
+			
+				{{form_facture.description(placeholder = 'Libéllé')}}
+				{{ form_facture.quantite(placeholder = 'Quantité', type = 'number') }}
+				{{form_facture.prix_u (placeholder = 'Prix Unitaire')}}
+				{{ form_facture.tva (placeholder = 'Taux Tva') }}
+					
+			
+				{{ form_facture.submit }}
+					
+				
+			</form>
+				
+
+		</section>
+
+	</main>
+{% endblock %}

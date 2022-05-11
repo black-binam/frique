@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main_v1.css') }} ">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<title></title>
+</head>
+
+<body>
+	<nav class="main_menu">
+		<div class="logo">
+			<div class="logo_content">
+				<span>Frique</span>
+			</div>
+		</div>
+
+		<div class="hamburger_menu">
+			<div class="hamburger_lines">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+
+	</nav>
+
+	{% block content %}
+
+
+	{% endblock %}
+
+	<footer>
+		<div class="triangles">
+			
+			<img class="svg svg_1" src="{{ url_for('static', filename = 'img/footer.png') }}">
+			
+
+		</div>
+
+
+	</footer>
+
+</body>
+
+
+</html>

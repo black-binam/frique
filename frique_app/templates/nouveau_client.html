@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	
+	<main>
+		<section>
+			<div class="nvc_titre"> <h1>Nouveau client</h1> </div>
+			<form method="POST" action="check" id="input_field">
+				{{ form.crsf_token }}
+				{{ form.hidden_tag() }}
+
+				<div class="group_two">
+					{{form.nom(placeholder = 'Nom')}}
+					{{ form.prenom(placeholder = 'Prénom') }}
+				</div>
+
+				{{form.nom_societe (placeholder = 'Nom entreprise')}}
+
+				<div class="group_two">
+					{{ form.nom_rue (placeholder = 'N° et rue') }}
+					{{ form.code_postal (placeholder = 'CP') }}
+					
+				</div>
+
+				{{form.siret (placeholder ='Siret')}}
+				{{form.telephone (placeholder ='Telephone', type = 'Number')}}
+				{{form.email (placeholder ='Email')}}
+
+				{{ form.submit }}
+					
+				
+			</form>
+				
+
+		</section>
+
+	</main>
+{% endblock %}

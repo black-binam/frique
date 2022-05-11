@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<main class="main_btns">
+	{% if not connexion and not nv_compte %}
+	<form method="POST" action="connexion" >
+		<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+		<div class="btns_container btn_connexion">
+			<button type="submit" class="btn_nvc " name="connexion_btn" value="asked">
+				<span>Connexion</span>
+			</button type="submit">
+
+			<div class="bar_ou">
+				
+				 <div></div> <p>OU</p> <div></div>
+			</div>
+
+			<div>
+				<span>Créer un compte?</span>
+				<button type="submit"   name="nv_compte" value="asked">
+					<span>Inscription</span>
+				</button type="submit">
+			</div>
+		</div>
+	</form>
+	{% endif %}
+
+	<!-------------------------------------------------------------!-->
+
+	<!-------------------------------------------------------------!-->
+
+	{# lorsqu'on clique sur le btn 'connexion' on tombe sur cette page #}
+	<!-------------------------------------------------------------!-->
+	{% if connexion %}
+	<section class="connexion_section">
+		<div class="connexion_titre"> <h1>Connexion</h1> </div>
+			<form id="input_field" class="form_connexion">
+				{{ form.csrf_token }}
+
+				{{ form.identifiant(placeholder = 'Email') }}
+				{{ form.mot_de_pass(placeholder = 'Mode passe') }}
+				{{ form.submit }}
+				
+
+			</form>
+	</section>
+	{% endif %}
+
+
+	<!-------------------------------------------------------------!-->
+
+	<!-------------------------------------------------------------!-->
+
+	{# lorsqu'on clique sur le btn 'creer un compte' on tombe sur cette page #}
+	<!-------------------------------------------------------------!-->
+	{% if nv_compte %}
+	<section >
+		<div class="connexion_titre"> <h1>Créer un compte</h1> </div>
+			<form id="input_field"  method="POST" action="connexion" class="form_nv_compte">
+				{{ form.csrf_token }}
+				{{ form.hidden_tag() }}
+
+				<div class="group_two">
+					{{form.dirigeant_nom(placeholder = 'Nom du dirigeant')}}
+					{{ form.dirigeant_prenom(placeholder = 'Prénom du dirigeant') }}
+				</div>
+
+				{{form.nom_societe (placeholder = 'Nom entreprise')}}
+
+				<div class="group_two">
+					{{ form.nom_rue (placeholder = 'N° et rue') }}
+					{{ form.code_postal (placeholder = 'CP') }}
+					
+				</div>
+
+				{{form.siret (placeholder ='Siret')}}
+				{{form.telephone (placeholder ='Telephone', type = 'Number')}}
+				{{form.email (placeholder ='Email')}}
+
+				{{ form.submit }}
+				
+
+			</form>
+	</section>
+	{% endif %}
+
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+FONCTIONNALITES
+-------------------------------------
+
+(30/04/2022) Rajouté la possibilité de rajouter une ligne sur la facture en cliquant sur le boutton '+'
